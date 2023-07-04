@@ -12,9 +12,10 @@ const app = http.createServer((req, res) => {
         return;
       }
 
-      let jsonData = JSON.parse(data);
+      let fileData = JSON.parse(data);
+      
       let obj = {
-        existingData: jsonData,
+        existingData: fileData,
       };
 
       fs.writeFile('data.txt', JSON.stringify(obj), 'utf8', (err) => {
